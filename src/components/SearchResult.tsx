@@ -8,8 +8,6 @@ export default function SearchResult() {
   const loading = useSelector<UsersState, UsersState["loading"]>(state => state.loading);
   const fetched = useSelector<UsersState, UsersState["fetched"]>(state => state.fetched);
 
-  console.log('something found', userFound);
-  console.log('fetched', fetched);
   if (loading) {
     return <p>Loading...</p>
   }

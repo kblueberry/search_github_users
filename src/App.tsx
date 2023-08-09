@@ -1,7 +1,7 @@
 import './App.css'
 import Search from "./components/Search";
 import SearchResult from "./components/SearchResult";
-import { loadUsers } from "./Api";
+import { loadUserInformation } from "./Api";
 import { useDispatch } from "react-redux";
 import { UserInformation } from "./interfaces/UserInformation";
 import { userFetchSucceeded } from "./store/Actions";
@@ -9,15 +9,15 @@ import { userFetchSucceeded } from "./store/Actions";
 function App() {
   const dispatch = useDispatch();
 
-  const searchUser = (searchQuery) => {
-    const textQuery = searchQuery();
+  const searchUser = (userName) => {
+    const username = userName();
     dispatch({ type: "userFetchStarted", payload: {
       user: null,
         fetched: true,
         loading: true,
         error: null
       }});
-    loadUsers(textQuery).then((response: any) => {
+    loadUserInformation(username).then((response: any) => {
       const userResult = new UserInformation(response.login, response.id,
           response.avatar_url, response.html_url,
           response.bio);

@@ -1,3 +1,3 @@
-export const loadUsers = (textQuery: string) => {
-  return fetch(`https://api.github.com/users/${textQuery}`).then(response => response.json())
+export const loadUserInformation = (username: string) => {
+  return fetch(`https://api.github.com/users/${username}`).then(response => response.json())
 }
