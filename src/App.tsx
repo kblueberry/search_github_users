@@ -1,6 +1,6 @@
 import './App.css'
 import Search from "./components/Search";
-import SearchResults from "./components/SearchResults";
+import SearchResult from "./components/SearchResult";
 import { loadUsers } from "./Api";
 import { useDispatch } from "react-redux";
 import { UserInformation } from "./interfaces/UserInformation";
@@ -21,7 +21,7 @@ function App() {
   return (
       <div className="container">
         <Search search={searchUsers}/>
-        <SearchResults/>
+        <SearchResult/>
       </div>
   )
 }

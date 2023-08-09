@@ -3,7 +3,7 @@ import { UsersState } from "../interfaces/UsersState";
 import NoResultsFound from "./NoResultsFound";
 import UserResultCard from "./UserResultCard";
 
-export default function SearchResults() {
+export default function SearchResult() {
   const searchResult = useSelector<UsersState, UsersState["userResult"]>(state => state.userResult);
 
   console.log('search result', searchResult);

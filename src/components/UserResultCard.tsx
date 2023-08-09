@@ -8,7 +8,7 @@ export default function UserResultCard({user}: {user: UserInformation}) {
     <div>
       <p><b>Username:</b> {user.login}</p>
       <p><b>Bio:</b> {user.bio || "No biography about this user"}</p>
-      <p><b>Link to GitHub:</b> {user.html_url}</p>
+      <p><b>Link to GitHub:</b> <a href={user.html_url} target={"_blank"}>{user.html_url}</a></p>
     </div>
   </div>
 }
