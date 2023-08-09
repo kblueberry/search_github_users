@@ -7,12 +7,13 @@ export default function SearchResult() {
   const userFound = useSelector<UsersState, UsersState["user"]>(state => state.user);
   const loading = useSelector<UsersState, UsersState["loading"]>(state => state.loading);
   const fetched = useSelector<UsersState, UsersState["fetched"]>(state => state.fetched);
+  const error = useSelector<UsersState, UsersState["error"]>(state => state.error);
 
   if (loading) {
     return <p>Loading...</p>
   }
 
-  if (fetched && !userFound) {
+  if (fetched && !!error) {
     return <NoResultsFound/>
   }
 

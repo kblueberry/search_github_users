@@ -5,7 +5,7 @@ export default function UserResultCard({ user }: { user: UserInformation }) {
     <img className="w-50" src={user.avatar_url} alt={`${user.login} avatar`}/>
     <div className="py-3">
       <UserDetails label={"Username"} value={user.login} />
-      <UserDetails label={"Bio"} value={user.bio || "No biography about this user"}/>
+      <UserDetails label={"Bio"} value={user.bio || "No bio"}/>
       <UserDetails label={"Link to GitHub"} value={user.html_url}/>
     </div>
   </div>

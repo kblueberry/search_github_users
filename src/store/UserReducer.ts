@@ -11,9 +11,6 @@ const initialUsersState = {
 
 export const UserReducer = createReducer(initialUsersState, (builder) => {
   builder
-      // .addCase(addUser, (state, action) => {
-      //   return {...state, user: action.payload};
-      // })
       .addCase(userFetchStarted, (state, action) => {
         return Object.assign(state, {
           user: action.payload.user,
