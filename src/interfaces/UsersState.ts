@@ -1,5 +1,8 @@
 import { UserInformation } from "./UserInformation";
 
 export interface UsersState {
-  userResult: UserInformation | null;
+  user: UserInformation | null;
+  fetched: false;
+  loading: false;
+  error: Error | null;
 }
