@@ -1,3 +1,6 @@
+import { dispatchUserFetchFailed, dispatchUserFetchStarted, dispatchUserFetchSucceeded } from "./store/DispatchActions";
+import { Store } from "@reduxjs/toolkit";
+
 export const loadUserInformation = (username: string) => {
   return fetch(`https://api.github.com/users/${username}`)
       .then(response => {
@@ -9,4 +12,16 @@ export const loadUserInformation = (username: string) => {
           throw new Error("Request to GitHub API failed!")
         }
       })
+}
+
+export const searchGitHubUser = (userName: Function, store: Store) => {
+  const username = userName();
+
+  dispatchUserFetchStarted(store);
+  loadUserInformation(username).then((response: any) => {
+    dispatchUserFetchSucceeded(store, response);
+  })
+      .catch((error: Error) => {
+        dispatchUserFetchFailed(store, error)
+      });
 }

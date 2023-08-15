@@ -10,7 +10,7 @@ export default function Search({search}: {search: Function}) {
 
   const getInputValue = () => inputValue;
 
-  return <div className="container d-flex flex-row align-items-end my-2">
+  return <div className="container d-flex flex-row align-items-baseline my-2">
     <TextField id="standard-basic" label="Type to start search" variant="standard" value={inputValue} onChange={handleSearchInputChange} />
     <Button className="mx-4" variant="contained" onClick={() => search(getInputValue)}>Search</Button>
   </div>
