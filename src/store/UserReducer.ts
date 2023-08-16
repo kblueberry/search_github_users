@@ -12,27 +12,12 @@ const initialUsersState = {
 export const UserReducer = createReducer(initialUsersState, (builder) => {
   builder
       .addCase(userFetchStarted, (state, action) => {
-        return Object.assign(state, {
-          user: action.payload.user,
-          fetched: action.payload.fetched,
-          loading: action.payload.loading,
-          error: action.payload.error
-        })
+        return Object.assign(state, action.payload)
       })
       .addCase(userFetchSucceeded, (state, action) => {
-        return Object.assign(state, {
-          user: action.payload.user,
-          fetched: action.payload.fetched,
-          loading: action.payload.loading,
-          error: action.payload.error
-        })
+        return Object.assign(state, action.payload)
       })
       .addCase(userFetchFailed, (state, action) => {
-        return Object.assign(state, {
-          user: action.payload.user,
-          fetched: action.payload.fetched,
-          loading: action.payload.loading,
-          error: action.payload.error
-        })
+        return Object.assign(state, action.payload)
       })
 });

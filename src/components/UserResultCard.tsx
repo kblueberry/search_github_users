@@ -12,8 +12,8 @@ export default function UserResultCard({ user }: { user: UserInformation }) {
 }
 
 function UserDetails({ label, value }: { label: string, value: string }) {
-  return <p className="d-flex flex-row justify-content-start">
+  return <span className="d-flex flex-row justify-content-start">
     <b>{label}:</b>
     {label === "Link to GitHub" ? <a href={value} target={"_blank"}>{value}</a> : <p>{value}</p>}
-  </p>
+  </span>
 }
